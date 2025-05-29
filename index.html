@@ -1,1 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEGEND 2025 | IEEE RAS Event</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --ieee-blue: #00629B;
+            --ieee-light-blue: #0083CA;
+            --ieee-dark-blue: #002855;
+            --ieee-gold: #C4961A;
+            --ieee-light-gray: #F2F2F2;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .ieee-blue {
+            background-color: var(--ieee-blue);
+        }
+
+        .ieee-blue-text {
+            color: var(--ieee-blue);
+        }
+
+        .ieee-light-blue {
+            background-color: var(--ieee-light-blue);
+        }
+
+        .ieee-dark-blue {
+            background-color: var(--ieee-dark-blue);
+        }
+
+        .ieee-gold {
+            background-color: var(--ieee-gold);
+        }
+
+        .ieee-gold-text {
+            color: var(--ieee-gold);
+        }
+
+        .btn-primary {
+            background-color: var(--ieee-blue);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--ieee-dark-blue);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary.disabled {
+            background-color: gray;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .landing-text-container {
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(5px);
+        }
+
+        .bg-image-1 {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 99vw;
+            height: 100vh;
+            background-image: url('./images/bg-9.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+
+        .nav-bar {
+            /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.25)); */
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--ieee-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .nav-link-mobile:hover::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            top: 0;
+            left: 0;
+            background-color: var(--ieee-light-blue);
+            /* Change to your desired color */
+        }
+
+        .workshop-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .workshop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--ieee-gold);
+        }
+
+        .schedule-item {
+            border-left: 3px solid var(--ieee-light-blue);
+            transition: all 0.2s ease;
+        }
+
+        .schedule-item:hover {
+            border-left: 5px solid var(--ieee-gold);
+            background-color: rgba(242, 242, 242, 0.5);
+        }
+
+        .feature-icon {
+            background-color: rgba(0, 98, 155, 0.1);
+            color: var(--ieee-blue);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            background-color: var(--ieee-blue);
+            color: white;
+        }
+
+        .countdown-item {
+            background-color: var(--ieee-dark-blue);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .countdown-item {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        .footer-link {
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--ieee-gold);
+        }
+
+        #mobile-menu {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white-75 nav-bar shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-4 py-2">
+            <div class="flex justify-between items-center">
+
+                <div class="flex-shrink-0 md:flex-grow-0">
+                    <img src="./logos/Megend-2025.svg" alt="Megend Logo" class="h-10">
+                </div>
+
+                <div id="mobile-menu" class="hidden sm:hidden bg-white w-full absolute top-full left-0">
+                    <div class="container mx-auto px-4 py-2 flex flex-col text-center space-y-2">
+                        <a href="#about" class="block py-2 ieee-blue-text nav-link-mobile">About</a>
+                        <a href="#schedule" class="block py-2 ieee-blue-text nav-link-mobile">Schedule</a>
+                        <a href="#workshops" class="block py-2 ieee-blue-text nav-link-mobile">Workshops</a>
+                        <a href="#features" class="block py-2 ieee-blue-text nav-link-mobile">Features</a>
+                        <a href="#register" class="block py-2 ieee-blue-text nav-link-mobile">Register</a>
+                        <a href="#contact" class="block py-2 ieee-blue-text nav-link-mobile">Contact</a>
+                    </div>
+                </div>
+
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="nav-link ieee-blue-text hover:ieee-gold-text">About</a>
+                    <a href="#schedule" class="nav-link ieee-blue-text hover:ieee-gold-text">Schedule</a>
+                    <a href="#workshops" class="nav-link ieee-blue-text hover:ieee-gold-text">Workshops</a>
+                    <a href="#features" class="nav-link ieee-blue-text hover:ieee-gold-text">Features</a>
+                    <a href="#register" class="nav-link ieee-blue-text hover:ieee-gold-text">Register</a>
+                    <a href="#contact" class="nav-link ieee-blue-text hover:ieee-gold-text">Contact</a>
+                </nav>
+
+                <div class="md:hidden flex justify-center items-center w-full">
+                    <button id="menu-toggle" class="focus:outline-none">
+                        <svg class="w-6 h-6 ieee-blue-text" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="flex items-center space-x-2 flex-shrink-0">
+                    <img src="./logos/ieee-mb-blue.png" alt="IEEE Logo" class="h-7">
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 md:pt-32 md:pb-20 text-white" style="position: relative;">
+        <div class="bg-image-1"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div
+                    class="landing-text-container md:w-1/2 mb-8 md:mb-0 p-8 rounded-2xl backdrop-blur-md border border-white/20 shadow-xl">
+                    <h1 class="text-3xl md:text-5xl font-bold mb-4 drop-shadow-md">MEGEND 2025</h1>
+                    <h2 class="text-xl md:text-2xl mb-6 text-blue-300 drop-shadow-md">Mastering Engineering through
+                        Guidance, Education, Networking, and Development</h2>
+                    <p class="text-lg mb-2 drop-shadow-md">September 7-9, 2025 | Hybrid Mode</p>
+                    <p class="text-lg mb-6 drop-shadow-md">Thiruvananthapuram, Kerala, India</p>
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#register"
+                            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-bold transition duration-300 shadow-md">Register
+                            Now</a>
+                        <a href="#about"
+                            class="bg-white text-gray-800 px-6 py-3 rounded-md font-bold transition duration-300 shadow-md hover:bg-gray-200">Learn
+                            More</a>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="./images/start-5.svg" alt="MEGEND 2025 Event" class="rounded-lg max-w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Countdown Timer -->
+    <section class="py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center">
+                <div class="flex space-x-4">
+                    <div class="countdown-item">
+                        <span class="text-2xl font-bold" id="days">--</span>
+                        <span class="text-xs">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="text-2xl font-bold" id="hours">--</span>
+                        <span class="text-xs">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="text-2xl font-bold" id="minutes">--</span>
+                        <span class="text-xs">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="text-2xl font-bold" id="seconds">--</span>
+                        <span class="text-xs">Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2 ieee-blue-text">About MEGEND 2025</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="./images/img-14.jpg" alt="RAS-event" class="rounded-lg shadow-xl">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <p class="text-lg mb-6">
+                        MEGEND is an event organized by the <strong>IEEE Robotics and Automation Society Student Branch
+                            Chapter at the College of Engineering Attingal</strong>.
+                    </p>
+                    <p class="text-lg mb-6">
+                        This hybrid-mode event is designed to promote hands-on learning, innovation, and membership
+                        development in the IEEE RAS community through <strong>interactive workshops, expert talks, and
+                            strategic networking.</strong>.
+                    </p>
+                    <p class="text-lg mb-6">
+                        Join us for an immersive experience featuring keynote addresses by distinguished guests,
+                        sessions with industry experts, and hands-on workshops designed to enhance your technical
+                        skills.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                            <div class="text-4xl mb-2 ieee-blue-text">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="font-bold">Network</h3>
+                            <p class="text-sm text-gray-600">Connect with industry experts</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                            <div class="text-4xl mb-2 ieee-blue-text">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h3 class="font-bold">Certify</h3>
+                            <p class="text-sm text-gray-600">Earn valuable certificates</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                            <div class="text-4xl mb-2 ieee-blue-text">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3 class="font-bold">Learn</h3>
+                            <p class="text-sm text-gray-600">Gain cutting-edge skills</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                            <div class="text-4xl mb-2 ieee-blue-text">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h3 class="font-bold">Compete</h3>
+                            <p class="text-sm text-gray-600">Win exciting prizes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Highlights -->
+    <section id="schedule" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2 ieee-blue-text">Schedule Highlights</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-600">A three-day immersive experience filled with knowledge,
+                    networking, and innovation</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between space-y-8 md:space-y-0 md:space-x-6">
+                <!-- Day 1 -->
+                <div class="md:w-full bg-gray-50 rounded-lg shadow-md overflow-hidden mb-8">
+                    <div class="ieee-blue text-white py-4 px-6">
+                        <h3 class="font-bold text-xl">Day 1 - September 7</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">8:00 AM - 9:30 AM</p>
+                                <h4 class="font-semibold">Registration and Coffee</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">9:30 AM - 10:30 AM</p>
+                                <h4 class="font-semibold">Inauguration</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">10:30 AM - 1:00 PM</p>
+                                <h4 class="font-semibold">Workshop Session 1</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">1:00 PM - 2:00 PM</p>
+                                <h4 class="font-semibold">Lunch Break</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">2:00 PM - 4:30 PM</p>
+                                <h4 class="font-semibold">Workshop Session 2</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">4:30 PM - 5:00 PM</p>
+                                <h4 class="font-semibold">Tea Time</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">5:00 PM - 6:00 PM</p>
+                                <h4 class="font-semibold">Ice Breaking Session</h4>
+                                <p class="text-sm text-gray-600">with Jithin K Jose</p>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">6:00 PM - 7:00 PM</p>
+                                <h4 class="font-semibold">Room Allotment</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">7:00 PM - 8:00 PM</p>
+                                <h4 class="font-semibold">Dinner</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">8:00 PM - 9:00 PM</p>
+                                <h4 class="font-semibold">Cultural Event</h4>
+                                <p class="text-sm text-gray-600">Tholpavakoothu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="md:w-full bg-gray-50 rounded-lg shadow-md overflow-hidden mb-8">
+                    <div class="ieee-blue text-white py-4 px-6">
+                        <h3 class="font-bold text-xl">Day 2 - September 8</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">8:00 AM - 9:00 AM</p>
+                                <h4 class="font-semibold">Breakfast</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">9:00 AM - 10:00 AM</p>
+                                <h4 class="font-semibold">Talk Session</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">10:00 AM - 12:30 PM</p>
+                                <h4 class="font-semibold">Workshops</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">12:30 PM - 2:00 PM</p>
+                                <h4 class="font-semibold">Lunch</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">2:00 PM - 3:00 PM</p>
+                                <h4 class="font-semibold">Membership Development Session</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">3:00 PM - 5:00 PM</p>
+                                <h4 class="font-semibold">Treasure Hunt</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">5:00 PM - 8:00 PM</p>
+                                <h4 class="font-semibold">Talk - Campus to Corporate</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">8:00 PM - 11:00 PM</p>
+                                <h4 class="font-semibold">Food and Culturals at the Woods</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="md:w-full bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                    <div class="ieee-blue text-white py-4 px-6">
+                        <h3 class="font-bold text-xl">Day 3 - September 9</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">8:00 AM - 9:00 AM</p>
+                                <h4 class="font-semibold">Breakfast</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">9:00 AM - 12:45 PM</p>
+                                <h4 class="font-semibold">Visit to CDAC Trivandrum</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">12:45 PM - 1:15 PM</p>
+                                <h4 class="font-semibold">Lunch</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">1:20 PM - 3:00 PM</p>
+                                <h4 class="font-semibold">Visit to Veli Tourist Village</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">4:00 PM - 4:15 PM</p>
+                                <h4 class="font-semibold">Tea Break</h4>
+                            </div>
+                            <div class="schedule-item pl-4 py-3">
+                                <p class="text-sm text-gray-500">6:00 PM - 6:30 PM</p>
+                                <h4 class="font-semibold">Closing Ceremony and Award Distribution</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <p class="text-gray-600 italic">* Detailed schedule will be shared with registered participants.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Workshops Section -->
+    <section id="workshops" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2 ieee-blue-text">Workshops</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-600">Explore future-ready skills through immersive, hands-on
+                    technical workshops.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Workshop 1 -->
+                <div class="workshop-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="rounded-full p-3 mr-4 feature-icon">
+                                <i class="fas fa-robot text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold ieee-blue-text">Getting Started with ROS</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Introduction to Robot Operating System (ROS) for robotics
+                            applications including simulation, control, and deployment.</p>
+                    </div>
+                </div>
+
+                <!-- Workshop 2 -->
+                <div class="workshop-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="rounded-full p-3 mr-4 feature-icon">
+                                <i class="fas fa-industry text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold ieee-blue-text">Industrial Automation</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Hands-on with PLC and SCADA systems for automation in industries,
+                            covering sensors, actuators, and control logic.</p>
+                    </div>
+                </div>
+
+                <!-- Workshop 3 -->
+                <div class="workshop-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="rounded-full p-3 mr-4 feature-icon">
+                                <i class="fas fa-hands-helping text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold ieee-blue-text">AI Sign Language Interpretation</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Develop AI-powered systems for interpreting sign language in
+                            real-time using computer vision and neural networks.</p>
+                    </div>
+                </div>
+
+                <!-- Workshop 4 -->
+                <div class="workshop-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="rounded-full p-3 mr-4 feature-icon">
+                                <i class="fas fa-tools text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold ieee-blue-text">Maker's Bootcamp</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Build your first 3D printer from scratch, learning mechanical
+                            assembly, calibration, and basic printing techniques.</p>
+                    </div>
+                </div>
+
+                <!-- Workshop 5 -->
+                <div class="workshop-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="rounded-full p-3 mr-4 feature-icon">
+                                <i class="fas fa-bolt text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold ieee-blue-text">Circuit Crafting</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Learn DIY PCB design and etching techniques using basic tools and
+                            safety practices for rapid prototyping.</p>
+                    </div>
+                </div>
+
+                <!-- Workshop 6 -->
+                <div class="workshop-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="rounded-full p-3 mr-4 feature-icon">
+                                <i class="fas fa-comments text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold ieee-blue-text">Team Communication</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Icebreaking and communication workshop tailored for technical
+                            teams to enhance collaboration and leadership.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2 ieee-blue-text">Special Features</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-600">Discover engaging experiences beyond workshops and talks</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card group bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./images/img-15.png" alt="Ice Breaking Session"
+                            class="w-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="rounded-full p-3 mr-4 feature-icon">
+                                <i class="fas fa-handshake text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold ieee-blue-text">Ice Breaking Session</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Kickstart your networking journey with team-building activities
+                            and games led by Jithin K Jose to foster collaboration and fun.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card group bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./images/img-16.png" alt="Treasure Hunt"
+                            class="w-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="rounded-full p-3 mr-4 feature-icon">
+                                <i class="fas fa-map-marked-alt text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold ieee-blue-text">Treasure Hunt</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">A thrilling campus-wide hunt combining clues, tech trivia, and
+                            teamwork. Compete, collaborate, and win exciting goodies!</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card group bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="./images/img-17.png" alt="Cultural Night"
+                            class="w-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="rounded-full p-3 mr-4 feature-icon">
+                                <i class="fas fa-music text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold ieee-blue-text">Cultural Night</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Unwind after a day of learning with performances, music, and
+                            vibrant cultural showcases under the stars.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audience Section -->
+    <section id="audience" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2 ieee-blue-text">Who Should Attend</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-600">MEGEND 2025 welcomes curious minds from diverse backgrounds
+                    united by a passion for technology, innovation, and learning.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Audience 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center feature-icon">
+                        <i class="fas fa-user-graduate text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 ieee-blue-text">Engineering Students</h3>
+                    <p class="text-gray-600">Students pursuing B.Tech or M.Tech in domains like robotics, electronics,
+                        computer science, and more.</p>
+                </div>
+
+                <!-- Audience 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center feature-icon">
+                        <i class="fas fa-lightbulb text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 ieee-blue-text">Innovators & Makers</h3>
+                    <p class="text-gray-600">DIY enthusiasts, tinkerers, and project builders passionate about hardware,
+                        automation, and creative problem-solving.</p>
+                </div>
+
+                <!-- Audience 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center feature-icon">
+                        <i class="fas fa-flask text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 ieee-blue-text">Researchers</h3>
+                    <p class="text-gray-600">Individuals involved in research, academic studies, or emerging
+                        technologies across disciplines.</p>
+                </div>
+
+                <!-- Audience 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center feature-icon">
+                        <i class="fas fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 ieee-blue-text">Student Leaders & IEEE Members</h3>
+                    <p class="text-gray-600">Tech club members, IEEE student volunteers, and those driving change in
+                        campus communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Registration Section -->
+    <section id="register" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2 ieee-blue-text">Registration</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-600">Be part of <strong>MEGEND 2025</strong> - where innovation meets opportunity. <strong>Register early</strong> and join the experience!</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                <div class="md:w-1/2 lg:w-1/3">
+                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg">
+                        <div class="ieee-blue text-white py-4 px-6 text-center">
+                            <h3 class="text-xl font-bold">Registration Details</h3>
+                        </div>
+                        <div class="p-6">
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-calendar-alt text-green-600"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Registration Opens</p>
+                                        <p class="text-sm text-gray-600">July 15, 2025</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-calendar-times text-red-600"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Early Bird Deadline</p>
+                                        <p class="text-sm text-gray-600">September 30, 2025</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-link text-blue-600"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Registration Link</p>
+                                        <p class="text-sm text-gray-600">ieee.ceal.in/megend</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-certificate text-yellow-600"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Includes</p>
+                                        <p class="text-sm text-gray-600">Workshop materials, certificate, lunch,
+                                            refreshments, and networking opportunities</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-users text-purple-600"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">IEEE Member Discount</p>
+                                        <p class="text-sm text-gray-600">Special rates for IEEE and IEEE RAS members</p>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="mt-8">
+                                <a href="#" target="_blank"
+                                    class="btn-primary w-full py-3 px-4 rounded-md font-semibold text-center block disabled"
+                                    disabled>
+                                    Registeration Not Open Yet
+                                </a>
+                                <!-- Uncomment the code below when registration opens -->
+                                <!-- <a href="https://ieee.ceal.in/megend/register/<register-page-code>" target="_blank"
+                                    class="btn-primary w-full py-3 px-4 rounded-md font-semibold text-center block">
+                                    Register Now
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 lg:w-1/3 mt-8 md:mt-0">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-4 ieee-blue-text">Why Register Early?</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 mt-1 text-green-600">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <p class="ml-3 text-gray-700">Secure early bird discount (20% off)</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 mt-1 text-green-600">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <p class="ml-3 text-gray-700">Priority selection for limited-capacity workshops</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 mt-1 text-green-600">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <p class="ml-3 text-gray-700">Exclusive pre-event networking opportunities</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 mt-1 text-green-600">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <p class="ml-3 text-gray-700">Guaranteed participation in Ideathon competition</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 mt-1 text-green-600">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <p class="ml-3 text-gray-700">Early access to event materials and resources</p>
+                            </li>
+                        </ul>
+
+                        <div class="mt-6 p-4 bg-blue-50 rounded-md">
+                            <p class="text-sm text-gray-700">
+                                <span class="font-semibold">Contact for Queries:</span><br>
+                                <a href="mailto:akashunnikrishnan1844@gmail.com"
+                                    class="text-blue-600 hover:underline">akashunnikrishnan1844@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2 ieee-blue-text">Contact Us</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-600">Have questions? Our team is here to help you</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between gap-8">
+                <div class="md:w-1/2 lg:w-2/5">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-4 ieee-blue-text">Get in Touch</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 mt-1 ieee-blue-text">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="font-semibold">Email</p>
+                                    <a href="mailto:akashunnikrishnan1844@gmail.com"
+                                        class="text-gray-600 hover:text-blue-600">akashunnikrishnan1844@gmail.com</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 mt-1 ieee-blue-text">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="font-semibold">Phone</p>
+                                    <p class="text-gray-600">+91 8848772531</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 mt-1 ieee-blue-text">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="font-semibold">Venue</p>
+                                    <p class="text-gray-600">College of Engineering Attingal<br>Thiruvananthapuram,
+                                        Kerala, India</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 mt-1 ieee-blue-text">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="font-semibold">Website</p>
+                                    <a href="https://ieee.ceal.in/megend" target="_blank"
+                                        class="text-gray-600 hover:text-blue-600">ieee.ceal.in/megend</a>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="mt-6">
+                            <h4 class="font-semibold mb-2">Connect With Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-600 hover:text-blue-600">
+                                    <i class="fab fa-facebook-f text-xl"></i>
+                                </a>
+                                <a href="#" class="text-gray-600 hover:text-blue-600">
+                                    <i class="fab fa-twitter text-xl"></i>
+                                </a>
+                                <a href="#" class="text-gray-600 hover:text-blue-600">
+                                    <i class="fab fa-instagram text-xl"></i>
+                                </a>
+                                <a href="#" class="text-gray-600 hover:text-blue-600">
+                                    <i class="fab fa-linkedin-in text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 lg:w-3/5">
+                    <div class="bg-white p-6 rounded-lg shadow-md h-full">
+                        <div class="aspect-w-16 aspect-h-9 h-full">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.811745198191!2d76.81692167503295!3d8.691122190932333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05e9f7c21e1c27%3A0x4eccbc1e5eb91332!2sCollege%20of%20Engineering%2C%20Attingal%20(CEAL)!5e0!3m2!1sen!2sin!4v1715515809441!5m2!1sen!2sin"
+                                style="border:0; width: 100%; height: 100%; min-height: 300px;" allowfullscreen=""
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 ieee-dark-blue text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-column justify-between">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-x-16 lg:gap-y-12">
+
+                    <div
+                        class="flex justify-center sm:justify-start flex-col items-center sm:items-start space-y-10 space-x-4 sm:space-x-0">
+                        <img src="./logos/ieee-mb-blue.png" alt="IEEE Logo" class="h-10 flex-shrink-0">
+                        <img src="./logos/RAS-logo-rgb.png" alt="SPS Logo" class="h-20 sm:m-2 sm:mt-5">
+                        <img src="./logos/ceal-ieee-sb.png" alt="CEAL Logo" class="h-10 flex-shrink-0">
+                    </div>
+
+                    <div class="text-center sm:text-left">
+                        <h3 class="text-lg font-semibold mb-3 ieee-gold-text">Quick Links</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#about" class="footer-link">About</a></li>
+                            <li><a href="#schedule" class="footer-link">Schedule</a></li>
+                            <li><a href="#workshops" class="footer-link">Workshops</a></li>
+                            <li><a href="#features" class="footer-link">Features</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="text-center sm:text-left">
+                        <h3 class="text-lg font-semibold mb-3 ieee-gold-text">Resources</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="https://www.ieee.org/" target="_blank" class="footer-link">IEEE.org</a></li>
+                            <li><a href="https://www.ieee-ras.org/" target="_blank" class="footer-link">IEEE RAS</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="text-center sm:text-left">
+                        <h3 class="text-lg font-semibold mb-3 ieee-gold-text">IEEE Disclaimer</h3>
+                        <p class="text-xs opacity-80">
+                            Authorized use of IEEE trademarks and the IEEE logo for this event have been approved by the
+                            IEEE Kerala Section and IEEE RAS Society. The content and opinions expressed
+                            on this website do not necessarily reflect the positions of the IEEE.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="rights-reserved">
+                    <p class="text-center text-sm mt-8">
+                        &copy; 2025 MEGEND. All rights reserved. | Designed by <a href="https://github.com/MTCodes01"
+                            target="_blank" class="hover:text-gray-400">MTCodes01</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script
+        type='text/javascript'>document.addEventListener('DOMContentLoaded', function () { window.setTimeout(document.querySelector('svg').classList.add('animated'), 1000); })</script>
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('September 7, 2025 09:00:00').getTime();
+            const now = new Date().getTime();
+            const timeRemaining = eventDate - now;
+
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = hours;
+            document.getElementById('minutes').innerText = minutes;
+            document.getElementById('seconds').innerText = seconds;
+        }
+
+        // Initial call and set interval
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.offsetTop;
+                    const offsetPosition = elementPosition - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
